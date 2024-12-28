@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>English Learning Content Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+        <h1>English Learning Content Generator</h1>
+        
+        <div class="form-group">
+            <label>Content Type</label>
+            <div class="options-container">
+                <label class="option-item">
+                    <input type="radio" name="content_type" value="article" checked>
+                    <span>Article</span>
+                </label>
+                <label class="option-item">
+                    <input type="radio" name="content_type" value="story">
+                    <span>Story</span>
+                </label>
+                <label class="option-item">
+                    <input type="radio" name="content_type" value="news">
+                    <span>News Report</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Topic</label>
+            <input type="text" id="topic" placeholder="Enter your topic..." required>
+        </div>
+
+        <div class="form-group">
+            <label>Select Levels</label>
+            <div class="options-container">
+                <label class="option-item">
+                    <input type="checkbox" name="levels" value="A1">
+                    <span>A1</span>
+                </label>
+                <label class="option-item">
+                    <input type="checkbox" name="levels" value="A2">
+                    <span>A2</span>
+                </label>
+                <label class="option-item">
+                    <input type="checkbox" name="levels" value="B1">
+                    <span>B1</span>
+                </label>
+                <label class="option-item">
+                    <input type="checkbox" name="levels" value="B2">
+                    <span>B2</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Exercise Types</label>
+            <div class="options-container">
+                <label class="option-item">
+                    <input type="checkbox" name="exercises" value="vocabulary">
+                    <span>Vocabulary</span>
+                </label>
+                <label class="option-item">
+                    <input type="checkbox" name="exercises" value="grammar">
+                    <span>Grammar</span>
+                </label>
+                <label class="option-item">
+                    <input type="checkbox" name="exercises" value="comprehension">
+                    <span>Comprehension</span>
+                </label>
+                <label class="option-item">
+                    <input type="checkbox" name="exercises" value="writing">
+                    <span>Writing</span>
+                </label>
+            </div>
+        </div>
+
+        <button onclick="generateContent()">Generate Content</button>
+
+        <div id="results" class="results"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
